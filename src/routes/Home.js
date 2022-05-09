@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getDownloadURL } from "firebase/storage";
 import Nweet from "components/Nweet";
 import {
-  // addDoc,
+  addDoc,
   collection,
   onSnapshot,
   query,
@@ -31,17 +31,22 @@ const Home = ({ userObj }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    let getDownloadfile = "";
+    if (filestr !== "") {
+      const fileRef = ref(storageService, `${userObj.uid} /${uuidv4()}`);
+      const uploadfile = await uploadString(fileRef, filestr, "data_url");
+      getDownloadfile = await getDownloadURL(uploadfile.ref);
+    }
+    const nweetObj = {
+      text: nweet,
+      createAt: Date.now(),
+      creatorId: userObj.uid,
+      getDownloadfile,
+    };
+    await addDoc(collection(dbService, "nweets"), nweetObj);
 
-    const fileRef = ref(storageService, `${userObj.uid} /${uuidv4()}`);
-    const uploadfile = await uploadString(fileRef, filestr, "data_url");
-    const getDownloadfile = await getDownloadURL(uploadfile.ref);
-
-    // await addDoc(collection(dbService, "nweets"), {
-    //   text: nweet,
-    //   createAt: Date.now(),
-    //   creatorId: userObj.uid,
-    // });
-    // setNweet("");
+    setNweet("");
+    setFilestr("");
   };
 
   const onChange = (event) => {
@@ -78,10 +83,8 @@ const Home = ({ userObj }) => {
           placeholder="what's on your mind"
           maxLength={120}
         />
-
-        <input type="submit" value="Nweet" />
         <input type="file" accept="image/*" value="" onChange={onFileChange} />
-
+        <input type="submit" value="Nweet" />
         {filestr && (
           <div>
             <img src={filestr} width="50px" height="50px" />

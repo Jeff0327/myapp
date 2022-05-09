@@ -55,6 +55,14 @@ const Nweet = ({ nweetObj, isOwn }) => {
       ) : (
         <>
           <h4>{nweetObj.text}</h4>
+          {nweetObj.getDownloadfile && (
+            <img
+              src={nweetObj.getDownloadfile}
+              alt="my_photo"
+              width="50px"
+              height="50px"
+            />
+          )}
           {isOwn && (
             <>
               <button onClick={onDeleteClick}>Delete Nweet</button>
