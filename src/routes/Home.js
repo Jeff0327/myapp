@@ -1,5 +1,6 @@
 import { dbService, storageService } from "fbase";
 import React, { useEffect, useState } from "react";
+import { getDownloadURL } from "firebase/storage";
 import Nweet from "components/Nweet";
 import {
   // addDoc,
@@ -31,9 +32,9 @@ const Home = ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    const fileRef = ref(storageService, `${userObj.uid} ${uuidv4()}`);
-    const response = await uploadString(fileRef, filestr, "data_url");
-    console.log(await response.ref.getDownloadURL());
+    const fileRef = ref(storageService, `${userObj.uid} /${uuidv4()}`);
+    const uploadfile = await uploadString(fileRef, filestr, "data_url");
+    const getDownloadfile = await getDownloadURL(uploadfile.ref);
 
     // await addDoc(collection(dbService, "nweets"), {
     //   text: nweet,
