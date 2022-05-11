@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
-
+import { ref, deleteObject } from "firebase/storage";
 const Nweet = ({ nweetObj, isOwn }) => {
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);
@@ -13,6 +13,8 @@ const Nweet = ({ nweetObj, isOwn }) => {
     console.log(ok);
     if (ok) {
       await deleteDoc(NweetTextRef);
+      const deleteFile = ref(storageService, nweetObj.getDownloadfile);
+      await deleteObject(deleteFile);
     }
   };
 

@@ -15,6 +15,7 @@ const Home = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
   const [filestr, setFilestr] = useState("");
+
   useEffect(() => {
     const q = query(
       collection(dbService, "nweets"),
@@ -73,6 +74,7 @@ const Home = ({ userObj }) => {
   const onClearfilestr = () => {
     setFilestr(null);
   };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -87,7 +89,7 @@ const Home = ({ userObj }) => {
         <input type="submit" value="Nweet" />
         {filestr && (
           <div>
-            <img src={filestr} width="50px" height="50px" />
+            <img src={filestr} alt="imgsource" width="50px" height="50px" />
             <button onClick={onClearfilestr}>Clear</button>
           </div>
         )}
