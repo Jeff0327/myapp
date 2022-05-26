@@ -16,13 +16,13 @@ const Auth = () => {
     console.log(data);
   };
   return (
-    <div>
+    <div className="AuthContainer">
       <AuthForm />
-      <div>
-        <button onClick={onSocialClick} name="google">
+      <div className="AuthBtns">
+        <button className="AuthBtn" onClick={onSocialClick} name="google">
           Continue with Google
         </button>
-        <button onClick={onSocialClick} name="github">
+        <button className="AuthBtn" onClick={onSocialClick} name="github">
           Continue with Github
         </button>
       </div>
