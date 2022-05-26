@@ -29,6 +29,8 @@ button{
     display:flex;
     justify-content:center;
 }
+
+/*Auth*/
 .AuthContainer{
     display:flex;
     flex-direction: column;
@@ -75,4 +77,8 @@ button{
     background:white;
     color:black;
     font-weight: bold;
+}
+/*nweet*/
+.nweetEdit{
+    
 }

@@ -39,7 +39,7 @@ const Nweet = ({ nweetObj, isOwn }) => {
         <>
           {isOwn && (
             <>
-              <from onSubmit={onSubmit} className="container nweetEdit">
+              <from onSubmit={onSubmit} className="nweetEdit">
                 <input
                   type="text"
                   placeholder="edit your nweet"
