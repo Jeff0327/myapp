@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navigation = ({ userObj }) => {
   return (
     <nav>
-      <ul>
+      <ul className="Navigation_lists">
         <li>
           <Link to="/">Home</Link>
         </li>

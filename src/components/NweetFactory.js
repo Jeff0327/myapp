@@ -52,8 +52,9 @@ const NweetFactory = ({ userObj }) => {
     setFilestr(null);
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="NweetFactory_Container">
       <input
+        className="NweetFactory_Search"
         value={nweet}
         onChange={onChange}
         type="text"
