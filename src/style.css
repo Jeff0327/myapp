@@ -107,5 +107,13 @@ button{
     text-align:center;
     margin-top: 50px;
     font-size:15px;
-    
+}
+.Home_list{
+    margin-right:10;
+    list-style:none;
+}
+.Profile_list{
+    font-size:15px;
+    list-style:none;
+    margin-left:10;
 }
