@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Navigation = ({ userObj }) => {
   return (
     <nav>
@@ -9,6 +10,8 @@ const Navigation = ({ userObj }) => {
         <li className="Home_list">
           <Link to="/">Home</Link>
           {/* <FontAwesomeIcon icon={brands} color={"#04AAFF"} size="2x" /> */}
+          {/* <FontAwesomeIcon icon="fa-solid fa-bat" size="3x" /> */}
+          <FontAwesomeIcon icon={faTwitter} color={"#04AAFF"} size="2x" />
         </li>
         <li className="Profile_list">
           <Link to="/Profile">{userObj.displayName}'s Profile</Link>
