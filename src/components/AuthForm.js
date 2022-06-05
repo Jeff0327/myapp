@@ -64,7 +64,7 @@ const AuthForm = () => {
         />
         {error}
       </form>
-      <span onClick={toggleAccount}>
+      <span className="AuthAccount" onClick={toggleAccount}>
         {newAccout ? "Sign in" : "Create Accout"}
       </span>
     </>

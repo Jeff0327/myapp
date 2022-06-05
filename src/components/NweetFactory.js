@@ -4,6 +4,8 @@ import { getDownloadURL } from "firebase/storage";
 import { ref, uploadString } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 const NweetFactory = ({ userObj }) => {
   const [filestr, setFilestr] = useState("");
   const [nweet, setNweet] = useState("");
@@ -52,17 +54,19 @@ const NweetFactory = ({ userObj }) => {
     setFilestr(null);
   };
   return (
-    <form onSubmit={onSubmit} className="NweetFactory_Container">
-      <input
-        className="NweetFactory_Search"
-        value={nweet}
-        onChange={onChange}
-        type="text"
-        placeholder="what's on your mind"
-        maxLength={120}
-      />
-      <input type="file" accept="image/*" value="" onChange={onFileChange} />
-      <input type="submit" value="Nweet" />
+    <form onSubmit={onSubmit} className="FactoryForm">
+      <div className="FactoryInput_Container">
+        <input
+          className="factoryInput__input"
+          value={nweet}
+          onChange={onChange}
+          type="text"
+          placeholder="what's on your mind"
+          maxLength={120}
+        />
+        <input type="file" accept="image/*" value="" onChange={onFileChange} />
+        <input type="submit" value="Nweet" className="factoryInput__arrow" />
+      </div>
       {filestr && (
         <div>
           <img src={filestr} alt="imgsource" width="50px" height="50px" />

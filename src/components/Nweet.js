@@ -34,7 +34,7 @@ const Nweet = ({ nweetObj, isOwn }) => {
     setNewNweet(value);
   };
   return (
-    <div>
+    <div className="nweet">
       {editing ? (
         <>
           {isOwn && (
@@ -48,9 +48,11 @@ const Nweet = ({ nweetObj, isOwn }) => {
                   onChange={onChange}
                 />
 
-                <input type="submit" value="Update Nweet" />
+                <input type="submit" value="Update Nweet" className="formBtn" />
               </from>
-              <button onClick={toggleEditing}>Cancel</button>
+              <button onClick={toggleEditing} className="formBtn">
+                Cancel
+              </button>
             </>
           )}
         </>

@@ -78,22 +78,63 @@ button{
     color:black;
     font-weight: bold;
 }
+.AuthAccount{
+    margin-top:10px;
+    background-color:#0378b2;
+    color:white;
+    font-size:15px;
+    border:1px solid blue;
+    border-radius:20px;
+    width:70px;
+    height: 25px;
+    text-align: center;
+}
 /*nweet*/
-.nweetEdit{
-    
-}
-.NweetFactory_Container{
-    justify-content:center;
-    text-align:center;
+
+/* profile */
+.profileform{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    padding-bottom: 30px;
+    width:100%;
     display:flex;
+    flex-direction:column;
+}
+.FactoryForm{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:100%;
     
 }
-.NweetFactory_Search{
-    font-size:20px;
+.FactoryInput_Container{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    align-items:center;
+    flex-wrap:wrap;
+    width:100%;
+    margin-bottom:20px;
+}
+.factoryInput__input{
+   flex-grow:1;
+   height:40px;
+   padding:0px 20px;color:white;
+   border: 1px solid #04aaff;
+   border-radius: 20px;
+   font-weight: bold;
+   font-size:15px;
+}
+.factoryInput__arrow{
+    position: absolute;
+    right: 0;
+    background-color: #04aaff;
+    height:40px;
+    width:40px;
+    padding:10px 0px;
     text-align: center;
     border-radius: 20px;
-    margin:20px;
-    font-weight: bold;
+    color:white;
+    font-size:12px;
 }
 /* Home */
 .Home_container{
