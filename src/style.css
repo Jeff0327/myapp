@@ -91,6 +91,12 @@ button{
     text-align: center;
 }
 /*nweet*/
+.nweet{
+    font-size:15px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
 
 /* profile */
 .profileform{
@@ -154,6 +160,7 @@ button{
     text-align: center;
     border-radius: 20px;
     color:white;
+    cursor:pointer;
 }
 .factoryInput_label span{
     margin-right:10px;
@@ -188,4 +195,20 @@ button{
     font-size:15px;
     list-style:none;
     margin-left:10;
+}
+.Profile_input{
+    border-radius: 20px;
+    height:30px;
+}
+.Profile_submit{
+    border-radius:20px;
+    height:30px;
+    background-color:#0378b2;
+}
+.Profile_logout{
+    margin:10px;
+    height:30px;
+    max-width:300px;
+    width:100%;
+    border-radius:20px;
 }

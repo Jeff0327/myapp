@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { dbService, storageService } from "fbase";
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { ref, deleteObject } from "firebase/storage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 const Nweet = ({ nweetObj, isOwn }) => {
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);
@@ -68,10 +70,16 @@ const Nweet = ({ nweetObj, isOwn }) => {
             />
           )}
           {isOwn && (
-            <>
-              <button onClick={onDeleteClick}>Delete Nweet</button>
-              <button onClick={toggleEditing}>Edit Nweet</button>
-            </>
+            <div className="Nweet_Btn">
+              <button className="Nweet_Delete" onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
+                Delete
+              </button>
+              <button className="Nweet_Edit" onClick={toggleEditing}>
+                <FontAwesomeIcon icon={faEdit} />
+                Edit
+              </button>
+            </div>
           )}
         </>
       )}
