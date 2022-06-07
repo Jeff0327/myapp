@@ -73,11 +73,9 @@ const Nweet = ({ nweetObj, isOwn }) => {
             <div className="Nweet_Btn">
               <button className="Nweet_Delete" onClick={onDeleteClick}>
                 <FontAwesomeIcon icon={faTrash} />
-                Delete
               </button>
               <button className="Nweet_Edit" onClick={toggleEditing}>
                 <FontAwesomeIcon icon={faEdit} />
-                Edit
               </button>
             </div>
           )}

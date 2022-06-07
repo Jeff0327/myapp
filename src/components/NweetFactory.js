@@ -64,10 +64,18 @@ const NweetFactory = ({ userObj }) => {
           placeholder="what's on your mind"
           maxLength={120}
         />
+
         <label htmlFor="attach-file" className="factoryInput_label">
           <span> Add Photo</span>
           <FontAwesomeIcon icon={faPlus} />
         </label>
+        <input
+          id="attach-file"
+          type="file"
+          accept="image/*"
+          onChange={onFileChange}
+          style={{ opacity: 0 }}
+        />
         <input type="submit" value="Nweet" className="factoryInput__arrow" />
       </div>
       {filestr && (
